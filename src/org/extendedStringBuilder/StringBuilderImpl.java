@@ -48,7 +48,10 @@ final class StringBuilderImpl implements ExtStringBuilder {
 			builder.append(emptyMessage);
 		}
 		else {
-			StreamSupport.stream(iterable.spliterator(), false).map(Object::toString).collect(Collectors.joining(delimiter));
+			final String str = StreamSupport.stream(iterable.spliterator(), false)
+					.map(Object::toString)
+					.collect(Collectors.joining(delimiter));
+			builder.append(str);
 		}
 		return this;
 	}
