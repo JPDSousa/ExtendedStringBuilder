@@ -8,20 +8,20 @@ import org.junit.Test;
 @SuppressWarnings("javadoc")
 public class StrinBuilderTest {
 
-	private static StringBuilder guineaPig;
+	private static ExtStringBuilder guineaPig;
 	
 	@Before
 	public final void setUp() {
-		guineaPig = StringBuilder.create();
+		guineaPig = ExtStringBuilder.create();
 	}
 	
 	@Test
 	public final void createTest() {
-		assertNotNull(StringBuilder.create());
-		assertNotNull(StringBuilder.create(128));
-		assertNotNull(StringBuilder.create("test"));
-		assertNotNull(StringBuilder.create((CharSequence) "that"));
-		assertNotNull(StringBuilder.fromJavaStringBuilder(new java.lang.StringBuilder()));
+		assertNotNull(ExtStringBuilder.create());
+		assertNotNull(ExtStringBuilder.create(128));
+		assertNotNull(ExtStringBuilder.create("test"));
+		assertNotNull(ExtStringBuilder.create((CharSequence) "that"));
+		assertNotNull(ExtStringBuilder.fromJavaStringBuilder(new java.lang.StringBuilder()));
 	}
 	
 	@Test
@@ -39,8 +39,8 @@ public class StrinBuilderTest {
 	
 	@Test
 	public final void breakLineTest() {
-		final StringBuilder b1 = StringBuilder.create().breakLine();
-		final StringBuilder b2 = StringBuilder.create().append("\n");
+		final ExtStringBuilder b1 = ExtStringBuilder.create().breakLine();
+		final ExtStringBuilder b2 = ExtStringBuilder.create().append("\n");
 		assertEquals(b1, b2);
 	}
 

@@ -5,7 +5,7 @@ import java.util.stream.StreamSupport;
 
 import org.apache.commons.collections4.IterableUtils;
 
-final class StringBuilderImpl implements StringBuilder {
+final class StringBuilderImpl implements ExtStringBuilder {
 
 	private final java.lang.StringBuilder builder;
 	
@@ -14,7 +14,7 @@ final class StringBuilderImpl implements StringBuilder {
 	}
 	
 	@Override
-	public StringBuilder appendIf(boolean condition, String str) {
+	public ExtStringBuilder appendIf(boolean condition, String str) {
 		if(condition) {
 			builder.append(str);
 		}
@@ -27,12 +27,12 @@ final class StringBuilderImpl implements StringBuilder {
 	}
 	
 	@Override
-	public StringBuilder append(Iterable<?> iterable, CharSequence delimiter) {
+	public ExtStringBuilder append(Iterable<?> iterable, CharSequence delimiter) {
 		return append(iterable, delimiter, null);
 	}
 	
 	@Override
-	public StringBuilder append(Iterable<?> iterable, CharSequence delimiter, String emptyMessage) {
+	public ExtStringBuilder append(Iterable<?> iterable, CharSequence delimiter, String emptyMessage) {
 		if(emptyMessage != null && IterableUtils.isEmpty(iterable)){
 			builder.append(emptyMessage);
 		}
@@ -43,13 +43,19 @@ final class StringBuilderImpl implements StringBuilder {
 	}
 	
 	@Override
-	public StringBuilder append(String str) {
+	public ExtStringBuilder append(String str) {
 		builder.append(str);
 		return this;
 	}
 	
 	@Override
-	public StringBuilder breakLine() {
+	public ExtStringBuilder append(Object str) {
+		builder.append(str);
+		return this;
+	}
+
+	@Override
+	public ExtStringBuilder breakLine() {
 		builder.append("\n");
 		return this;
 	}

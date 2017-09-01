@@ -1,18 +1,18 @@
 package org.extendedStringBuilder;
 
 @SuppressWarnings("javadoc")
-public class ConditionalStringBuilder implements StringBuilder {
+public class ConditionalStringBuilder implements ExtStringBuilder {
 
-	private final StringBuilder builder;
+	private final ExtStringBuilder builder;
 	private final boolean condition;
 	
-	ConditionalStringBuilder(StringBuilder builder, boolean condition) {
+	ConditionalStringBuilder(ExtStringBuilder builder, boolean condition) {
 		this.builder = builder;
 		this.condition = condition;
 	}
 	
 	
-	public StringBuilder endIf() {
+	public ExtStringBuilder endIf() {
 		return builder;
 	}
 	
@@ -22,7 +22,7 @@ public class ConditionalStringBuilder implements StringBuilder {
 	}
 
 	@Override
-	public StringBuilder breakLine() {
+	public ExtStringBuilder breakLine() {
 		if(condition) {
 			builder.breakLine();
 		}
@@ -31,7 +31,7 @@ public class ConditionalStringBuilder implements StringBuilder {
 
 
 	@Override
-	public StringBuilder append(String str) {
+	public ExtStringBuilder append(String str) {
 		if(condition) {
 			builder.append(str);
 		}
@@ -40,7 +40,16 @@ public class ConditionalStringBuilder implements StringBuilder {
 
 
 	@Override
-	public StringBuilder append(Iterable<?> iterable, CharSequence delimiter, String emptyMessage) {
+	public ExtStringBuilder append(Object str) {
+		if(condition) {
+			builder.append(str);
+		}
+		return this;
+	}
+
+
+	@Override
+	public ExtStringBuilder append(Iterable<?> iterable, CharSequence delimiter, String emptyMessage) {
 		if(condition) {
 			builder.append(iterable, delimiter, emptyMessage);
 		}
@@ -49,7 +58,7 @@ public class ConditionalStringBuilder implements StringBuilder {
 
 
 	@Override
-	public StringBuilder append(Iterable<?> iterable, CharSequence delimiter) {
+	public ExtStringBuilder append(Iterable<?> iterable, CharSequence delimiter) {
 		if(condition) {
 			builder.append(iterable, delimiter);
 		}
@@ -67,7 +76,7 @@ public class ConditionalStringBuilder implements StringBuilder {
 
 
 	@Override
-	public StringBuilder appendIf(boolean condition, String str) {
+	public ExtStringBuilder appendIf(boolean condition, String str) {
 		if(this.condition) {
 			builder.appendIf(condition, str);
 		}

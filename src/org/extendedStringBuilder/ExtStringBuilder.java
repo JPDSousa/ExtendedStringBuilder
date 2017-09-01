@@ -1,31 +1,31 @@
 package org.extendedStringBuilder;
 
 @SuppressWarnings("javadoc")
-public interface StringBuilder {
+public interface ExtStringBuilder {
 	
 	final int DEFAULT_SIZE = 32;
 	
-	public static StringBuilder create() {
+	public static ExtStringBuilder create() {
 		final java.lang.StringBuilder builder = new java.lang.StringBuilder(DEFAULT_SIZE);
 		return fromJavaStringBuilder(builder);
 	}
 	
-	public static StringBuilder create(int capacity) {
+	public static ExtStringBuilder create(int capacity) {
 		final java.lang.StringBuilder builder = new java.lang.StringBuilder(capacity);
 		return fromJavaStringBuilder(builder);
 	}
 	
-	public static StringBuilder create(CharSequence string) {
+	public static ExtStringBuilder create(CharSequence string) {
 		final java.lang.StringBuilder builder = new java.lang.StringBuilder(string);
 		return fromJavaStringBuilder(builder);
 	}
 	
-	public static StringBuilder create(String string) {
+	public static ExtStringBuilder create(String string) {
 		final java.lang.StringBuilder builder = new java.lang.StringBuilder(string);
 		return fromJavaStringBuilder(builder);
 	}
 	
-	public static StringBuilder fromJavaStringBuilder(java.lang.StringBuilder strBuilder) {
+	public static ExtStringBuilder fromJavaStringBuilder(java.lang.StringBuilder strBuilder) {
 		return new StringBuilderImpl(strBuilder);
 	}
 	
@@ -35,16 +35,18 @@ public interface StringBuilder {
 	@Override
 	boolean equals(Object obj);
 
-	StringBuilder breakLine();
+	ExtStringBuilder breakLine();
 
-	StringBuilder append(String str);
+	ExtStringBuilder append(String str);
+	
+	ExtStringBuilder append(Object str);
 
-	StringBuilder append(Iterable<?> iterable, CharSequence delimiter, String emptyMessage);
+	ExtStringBuilder append(Iterable<?> iterable, CharSequence delimiter, String emptyMessage);
 
-	StringBuilder append(Iterable<?> iterable, CharSequence delimiter);
+	ExtStringBuilder append(Iterable<?> iterable, CharSequence delimiter);
 
 	ConditionalStringBuilder appendIf(boolean condition);
 
-	StringBuilder appendIf(boolean condition, String str);
+	ExtStringBuilder appendIf(boolean condition, String str);
 
 }
