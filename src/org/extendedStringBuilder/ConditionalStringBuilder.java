@@ -40,6 +40,15 @@ public class ConditionalStringBuilder implements ExtStringBuilder {
 
 
 	@Override
+	public ExtStringBuilder tab(int n) {
+		if(condition) {
+			builder.tab(n);
+		}
+		return this;
+	}
+
+
+	@Override
 	public ExtStringBuilder append(String str) {
 		if(condition) {
 			builder.append(str);

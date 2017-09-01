@@ -78,6 +78,14 @@ final class StringBuilderImpl implements ExtStringBuilder {
 	}
 
 	@Override
+	public ExtStringBuilder tab(int n) {
+		for(int i = 0; i < n; i++) {
+			tab();
+		}
+		return this;
+	}
+
+	@Override
 	public String toString() {
 		return builder.toString();
 	}

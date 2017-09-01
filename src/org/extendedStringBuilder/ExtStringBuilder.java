@@ -37,6 +37,7 @@ public interface ExtStringBuilder {
 
 	ExtStringBuilder breakLine();
 	ExtStringBuilder tab();
+	ExtStringBuilder tab(int n);
 
 	ExtStringBuilder append(String str);
 	
