@@ -61,6 +61,12 @@ final class StringBuilderImpl implements ExtStringBuilder {
 	}
 	
 	@Override
+	public ExtStringBuilder tab() {
+		builder.append('\t');
+		return this;
+	}
+
+	@Override
 	public String toString() {
 		return builder.toString();
 	}

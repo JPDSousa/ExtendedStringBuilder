@@ -36,6 +36,7 @@ public interface ExtStringBuilder {
 	boolean equals(Object obj);
 
 	ExtStringBuilder breakLine();
+	ExtStringBuilder tab();
 
 	ExtStringBuilder append(String str);
 	

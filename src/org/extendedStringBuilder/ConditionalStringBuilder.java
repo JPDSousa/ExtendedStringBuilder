@@ -5,17 +5,17 @@ public class ConditionalStringBuilder implements ExtStringBuilder {
 
 	private final ExtStringBuilder builder;
 	private final boolean condition;
-	
+
 	ConditionalStringBuilder(ExtStringBuilder builder, boolean condition) {
 		this.builder = builder;
 		this.condition = condition;
 	}
-	
-	
+
+
 	public ExtStringBuilder endIf() {
 		return builder;
 	}
-	
+
 	@Override
 	public String toString() {
 		return endIf().toString();
@@ -25,6 +25,15 @@ public class ConditionalStringBuilder implements ExtStringBuilder {
 	public ExtStringBuilder breakLine() {
 		if(condition) {
 			builder.breakLine();
+		}
+		return this;
+	}
+
+
+	@Override
+	public ExtStringBuilder tab() {
+		if(condition) {
+			builder.tab();
 		}
 		return this;
 	}
@@ -114,5 +123,5 @@ public class ConditionalStringBuilder implements ExtStringBuilder {
 		}
 		return true;
 	}
-	
+
 }
