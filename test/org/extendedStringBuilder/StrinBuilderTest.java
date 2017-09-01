@@ -65,7 +65,7 @@ public class StrinBuilderTest {
 		assertEquals("", ExtStringBuilder.create().append(new ArrayList<>(), delimiter).toString());
 		assertEquals("a", ExtStringBuilder.create().append(singleString, delimiter).toString());
 		assertEquals(String.join(delimiter, strings), ExtStringBuilder.create().append(strings, delimiter, emptyMsg).toString());
-		assertEquals(String.join(delimiter, strings), ExtStringBuilder.create().append(new ArrayList<>(), delimiter, emptyMsg).toString());
+		assertEquals(emptyMsg, ExtStringBuilder.create().append(new ArrayList<>(), delimiter, emptyMsg).toString());
 		assertEquals("a", ExtStringBuilder.create().append(singleString, delimiter, emptyMsg).toString());
 	}
 
