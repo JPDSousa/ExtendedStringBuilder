@@ -44,7 +44,7 @@ final class StringBuilderImpl implements ExtStringBuilder {
 	
 	@Override
 	public ExtStringBuilder append(Iterable<?> iterable, CharSequence delimiter, String emptyMessage) {
-		if(emptyMessage != null && IterableUtils.isEmpty(iterable)){
+		if(IterableUtils.isEmpty(iterable)){
 			builder.append(emptyMessage);
 		}
 		else {
