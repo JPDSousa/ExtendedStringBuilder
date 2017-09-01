@@ -94,6 +94,15 @@ public class ConditionalStringBuilder implements ExtStringBuilder {
 
 
 	@Override
+	public ExtStringBuilder appendIf(boolean condition, String str, String elseStr) {
+		if(this.condition) {
+			builder.appendIf(condition, str, elseStr);
+		}
+		return this;
+	}
+
+
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;

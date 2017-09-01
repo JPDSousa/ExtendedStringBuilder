@@ -22,6 +22,17 @@ final class StringBuilderImpl implements ExtStringBuilder {
 	}
 	
 	@Override
+	public ExtStringBuilder appendIf(boolean condition, String str, String elseStr) {
+		if(condition) {
+			builder.append(str);
+		}
+		else {
+			builder.append(elseStr);
+		}
+		return this;
+	}
+
+	@Override
 	public ConditionalStringBuilder appendIf(boolean condition) {
 		return new ConditionalStringBuilder(this, condition);
 	}

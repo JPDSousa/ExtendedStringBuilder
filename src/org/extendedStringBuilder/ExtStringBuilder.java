@@ -49,5 +49,6 @@ public interface ExtStringBuilder {
 	ConditionalStringBuilder appendIf(boolean condition);
 
 	ExtStringBuilder appendIf(boolean condition, String str);
+	ExtStringBuilder appendIf(boolean condition, String str, String elseStr);
 
 }
