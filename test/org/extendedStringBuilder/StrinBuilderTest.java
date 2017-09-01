@@ -68,5 +68,13 @@ public class StrinBuilderTest {
 		assertEquals(emptyMsg, ExtStringBuilder.create().append(new ArrayList<>(), delimiter, emptyMsg).toString());
 		assertEquals("a", ExtStringBuilder.create().append(singleString, delimiter, emptyMsg).toString());
 	}
+	
+	@Test
+	public final void tabTest() {
+		final String expected1 = "\t";
+		final String expected2 = "\t\t\t";
+		assertEquals(expected1, guineaPig.tab().toString());
+		assertEquals(expected2, guineaPig.tab(2).toString());
+	}
 
 }
