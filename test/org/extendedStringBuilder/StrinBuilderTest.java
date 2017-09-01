@@ -31,6 +31,10 @@ public class StrinBuilderTest {
 	public final void equalsTest() {
 		final String expected = "test";
 		assertEquals(guineaPig, guineaPig.append(expected));
+		assertNotEquals(guineaPig, null);
+		assertNotEquals(expected, guineaPig);
+		assertNotEquals(ExtStringBuilder.fromJavaStringBuilder(null), guineaPig);
+		assertNotEquals(ExtStringBuilder.create(), guineaPig);
 	}
 	
 	@Test
