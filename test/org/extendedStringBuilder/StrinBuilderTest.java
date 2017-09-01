@@ -76,5 +76,10 @@ public class StrinBuilderTest {
 		assertEquals(expected1, guineaPig.tab().toString());
 		assertEquals(expected2, guineaPig.tab(2).toString());
 	}
+	
+	@Test
+	public final void hashCodeTest() {
+		guineaPig.append("hashcode").hashCode();
+	}
 
 }
