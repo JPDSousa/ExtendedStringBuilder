@@ -39,7 +39,7 @@ final class StringBuilderImpl implements ExtStringBuilder {
 	
 	@Override
 	public ExtStringBuilder append(Iterable<?> iterable, CharSequence delimiter) {
-		return append(iterable, delimiter, null);
+		return append(iterable, delimiter, "");
 	}
 	
 	@Override
