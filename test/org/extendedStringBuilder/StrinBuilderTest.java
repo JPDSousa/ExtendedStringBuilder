@@ -2,6 +2,9 @@ package org.extendedStringBuilder;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -42,6 +45,20 @@ public class StrinBuilderTest {
 		final ExtStringBuilder b1 = ExtStringBuilder.create().breakLine();
 		final ExtStringBuilder b2 = ExtStringBuilder.create().append("\n");
 		assertEquals(b1, b2);
+	}
+	
+	@Test
+	public final void appendIterableTest() {
+		final String emptyMsg = "empty";
+		final Iterable<String> strings = Arrays.asList("a", "b", "c");
+		final Iterable<String> singleString = Arrays.asList("a");
+		final String delimiter = ".";
+		assertEquals(String.join(delimiter, strings), ExtStringBuilder.create().append(strings, delimiter).toString());
+		assertEquals("", ExtStringBuilder.create().append(new ArrayList<>(), delimiter).toString());
+		assertEquals("a", ExtStringBuilder.create().append(singleString, delimiter).toString());
+		assertEquals(String.join(delimiter, strings), ExtStringBuilder.create().append(strings, delimiter, emptyMsg).toString());
+		assertEquals(String.join(delimiter, strings), ExtStringBuilder.create().append(new ArrayList<>(), delimiter, emptyMsg).toString());
+		assertEquals("a", ExtStringBuilder.create().append(singleString, delimiter, emptyMsg).toString());
 	}
 
 }
