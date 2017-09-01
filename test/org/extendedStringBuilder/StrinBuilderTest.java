@@ -41,6 +41,14 @@ public class StrinBuilderTest {
 	}
 	
 	@Test
+	public final void toStringObjectTest() {
+		final Integer obj = new Integer(5);
+		final String expected = obj.toString();
+		guineaPig.append(obj);
+		assertEquals(expected, guineaPig.toString());
+	}
+	
+	@Test
 	public final void breakLineTest() {
 		final ExtStringBuilder b1 = ExtStringBuilder.create().breakLine();
 		final ExtStringBuilder b2 = ExtStringBuilder.create().append("\n");
