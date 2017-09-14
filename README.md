@@ -3,6 +3,7 @@ Extended String Builder
 [![Build Status](https://travis-ci.org/JPDSousa/ExtendedStringBuilder.svg?branch=master)](https://travis-ci.org/JPDSousa/ExtendedStringBuilder)
 [![codecov](https://codecov.io/gh/JPDSousa/ExtendedStringBuilder/branch/master/graph/badge.svg)](https://codecov.io/gh/JPDSousa/ExtendedStringBuilder)
 [![](https://jitpack.io/v/JPDSousa/ExtendedStringBuilder.svg)](https://jitpack.io/#JPDSousa/ExtendedStringBuilder)
+[![Dependency Status](https://www.versioneye.com/user/projects/59b563340fb24f0032e40c20/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/59b563340fb24f0032e40c20)
 
 Extended String Builder is a simple utility library that extends the common [StringBuilder](https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html) from java's native library.
 
