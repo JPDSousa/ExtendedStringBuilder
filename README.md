@@ -12,7 +12,7 @@ The Extended String Builder wraps the classic StringBuilder, adding additional u
 How To Use?
 ---------------
 
-Simply call `StringBuilder.create()` to create a default (extended) string builder. From there just use the available methods to build your strings!
+Simply call `ExtStringBuilder.create()` to create a default (extended) string builder. From there just use the available methods to build your strings!
 
 Conditional concatenation
 -------------------------
