@@ -132,10 +132,9 @@ public class ConditionalStringBuilder implements ExtStringBuilder {
 			return false;
 		}
 		ConditionalStringBuilder other = (ConditionalStringBuilder) obj;
-		if (builder == null) {
-			if (other.builder != null) {
-				return false;
-			}
+		if (builder == null && other.builder != null) {
+			return false;
+		}
 		} else if (!builder.equals(other.builder)) {
 			return false;
 		}
